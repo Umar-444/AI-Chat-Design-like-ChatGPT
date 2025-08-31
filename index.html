@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Modern Chat UI</title>
+  <link rel="stylesheet" href="custom.css" /> 
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="side-head">
+        <div class="logo" aria-hidden="true"></div>
+        <div class="title">Chat Studio</div>
+        <div class="side-actions">
+          <button class="btn primary" id="newChatBtn" title="New chat">New</button>
+          <button class="btn" id="clearAllBtn" title="Clear all">Clear</button>
+        </div>
+      </div>
+      <div class="list" id="convList"></div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <select id="model" class="select" title="Model">
+          <option>gpt-5</option>
+          <option selected>gpt-5-mini</option>
+          <option>o3-mini</option>
+          <option>llm-pro</option>
+        </select>
+        <div class="agents" id="agents">
+          <div class="agent active" data-id="general"><span class="dot"></span><span>General</span></div>
+          <div class="agent" data-id="coder"><span class="dot"></span><span>Coder</span></div>
+          <div class="agent" data-id="designer"><span class="dot"></span><span>Designer</span></div>
+        </div>
+        <div class="grow"></div>
+        <div class="row">
+          <div class="kbd">⌘ K</div>
+          <div class="kbd">/</div>
+        </div>
+      </header>
+
+      <section class="chat" id="chat">
+        <div class="container" id="thread"></div>
+      </section>
+
+      <footer class="composer">
+        <div class="wrap">
+          <div class="suggest" id="suggest"></div>
+          <div class="input">
+            <button class="btn" id="attachBtn" title="Attach file">📎</button>
+            <textarea id="prompt" rows="1" placeholder="Message... Press Enter to send"></textarea>
+            <div class="toolbar">
+              <button class="btn" id="micBtn" title="Voice">🎤</button>
+              <button class="btn" id="stopBtn" title="Stop" disabled>■</button>
+              <button class="send" id="sendBtn" title="Send">Send</button>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </main>
+  </div>
+
+  <template id="tpl-msg">
+    <div class="msg fade-in">
+      <div class="avatar"></div>
+      <div>
+        <div class="meta"></div>
+        <div class="bubble"></div>
+        <div class="tools"></div>
+      </div>
+    </div>
+  </template>
+
+  <script>
+
+  </script>
+</body>
+</html>
